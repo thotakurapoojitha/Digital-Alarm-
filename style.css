@@ -1,0 +1,105 @@
+body {
+    background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.clock-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+    padding: 2.5rem;
+    max-width: 500px;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.clock-card:hover {
+    transform: translateY(-5px);
+}
+
+.time {
+    text-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
+    font-family: 'Digital-7', monospace;
+    letter-spacing: 0.1em;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    border: none;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.4);
+}
+
+.alarm {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    animation: slideIn 0.4s ease-out;
+    transition: all 0.3s;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.form-control {
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    backdrop-filter: blur(10px);
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.btn-danger, .btn-warning {
+    border-radius: 25px;
+    padding: 0.5rem 1.5rem;
+    font-size: 0.875rem;
+}
+
+.alarm-ringing {
+    animation: pulse 0.5s infinite;
+    background: rgba(255, 0, 0, 0.2) !important;
+    border-color: #ff0000 !important;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@media (max-width: 576px) {
+    .clock-card {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+    .time {
+        font-size: 2.5rem;
+    }
+}
